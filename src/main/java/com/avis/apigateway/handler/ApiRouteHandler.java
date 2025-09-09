@@ -20,8 +20,6 @@ import static org.springframework.web.reactive.function.BodyInserters.fromValue;
 public class ApiRouteHandler {
   private final RouteService routeService;
 
-  private final RouteLocator routeLocator;
-
   private final GatewayRoutesRefresher gatewayRoutesRefresher;
 
   public Mono<ServerResponse> create(ServerRequest serverRequest) {
@@ -43,6 +41,6 @@ public class ApiRouteHandler {
 
   public Mono<ServerResponse> refreshRoutes(ServerRequest serverRequest) {
     gatewayRoutesRefresher.refreshRoutes();
-    return ServerResponse.ok().body(BodyInserters.fromObject("Routes reloaded successfully"));
+    return ServerResponse.ok().body(BodyInserters.fromValue("Routes reloaded successfully"));
   }
 }

@@ -22,8 +22,7 @@ public class RouteServiceImpl implements RouteService {
 
   @Override
   public Mono<ApiRoute> create(ApiRoute apiRoute) {
-    Mono<ApiRoute> route = this.routeRepository.save(apiRoute);
-    return route;
+    return this.routeRepository.save(apiRoute);
   }
 
   @Override

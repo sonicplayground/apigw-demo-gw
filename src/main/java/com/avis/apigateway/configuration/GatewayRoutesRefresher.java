@@ -1,5 +1,6 @@
 package com.avis.apigateway.configuration;
 
+import lombok.NonNull;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
@@ -11,7 +12,7 @@ public class GatewayRoutesRefresher implements ApplicationEventPublisherAware {
   private ApplicationEventPublisher applicationEventPublisher;
 
   @Override
-  public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+  public void setApplicationEventPublisher(@NonNull ApplicationEventPublisher applicationEventPublisher) {
     this.applicationEventPublisher = applicationEventPublisher;
   }
 
