@@ -1,6 +1,10 @@
 spring:
   application:
     name: apigateway
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/apigateway
+      database: apigateway
   cloud:
     gateway:
       server:
